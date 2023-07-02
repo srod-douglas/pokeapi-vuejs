@@ -1,2 +1,3 @@
 import { useCounterStore } from './counter';
-export { useCounterStore }
+import { useInputValue } from './inputValue';
+export { useCounterStore, useInputValue }
