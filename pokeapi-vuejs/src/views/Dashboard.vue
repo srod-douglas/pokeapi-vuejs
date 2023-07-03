@@ -58,7 +58,7 @@ let maxXp = reactive(ref(0));
           <h1 class="header-title"> Pokeapi Vuejs </h1>
         </div>
         <form @submit.prevent class="form-floating mb-3">
-          <input v-if="inputValue?.value === undefined" v-model="inputValue" autocomplete="off" class="form-control" id="floatingInput" >
+          <input v-if="inputValue?.value === undefined" v-model="inputValue" autocomplete="off" class="form-control" id="floatingInput" /> >
           <label for="floatingInput">Digite o nome do pokemon</label>
         </form>
       </div>
