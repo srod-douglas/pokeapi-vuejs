@@ -1,14 +1,10 @@
 <script setup>
 
 import { reactive, ref, onMounted, onUpdated, computed } from 'vue';
-import { useInputValue } from '@/stores/inputValue.ts'
 import Modal from '@/components/Modal.vue'
 import Card from '@/components/Card.vue'
 import api from '@/services/api.ts';
 import { usePokeModal } from '@/stores/pokeModal.ts';
-
-
-const baseUrlImages = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world';
 
 const pokeModalStore = usePokeModal();
 const inputValue = reactive(ref());
@@ -43,7 +39,7 @@ let maxXp = reactive(ref(0));
   })
 
   const pokemonsFiltered = computed(()=>{
-    if(pokemons.value && inputValue.value){
+    if(pokemons.value && inputValue.value !== undefined){
       return pokemons.value.filter(pokemon=>
         pokemon.name.toLowerCase().includes(inputValue.value.toLowerCase())
       )
@@ -62,7 +58,7 @@ let maxXp = reactive(ref(0));
           <h1 class="header-title"> Pokeapi Vuejs </h1>
         </div>
         <form @submit.prevent class="form-floating mb-3">
-          <input v-model="inputValue" type="text" autocomplete="off" class="form-control" id="floatingInput" placeholder="ex: pikachu">
+          <input v-model="inputValue" type="text" autocomplete="off" class="form-control" id="floatingInput" >
           <label for="floatingInput">Digite o nome do pokemon</label>
         </form>
       </div>
