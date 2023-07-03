@@ -2,12 +2,15 @@
 
 import { reactive, ref, onMounted, onUpdated, computed } from 'vue';
 import { useInputValue } from '@/stores/inputValue.ts'
-
+import Modal from '@/components/Modal.vue'
 import Card from '@/components/Card.vue'
 import api from '@/services/api.ts';
+import { usePokeModal } from '@/stores/pokeModal.ts';
+
 
 const baseUrlImages = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world';
 
+const pokeModalStore = usePokeModal();
 const inputValue = reactive(ref());
 let pokemons = reactive(ref([]))
 let maxAttack= reactive(ref(0));
@@ -18,7 +21,7 @@ let maxXp = reactive(ref(0));
 
     (async () => {
       try{
-        const request = await api.get('/pokemon?limit=10&offset=0')
+        const request = await api.get('/pokemon?limit=151&offset=0')
           request.data.results.forEach(async(element) => {
             const response = await api.get(`/pokemon/${element.name}`)
             pokemons.value.push(response.data)
@@ -71,7 +74,7 @@ let maxXp = reactive(ref(0));
 
       <section>
         <ul>
-          <Card v-for="pokemon in pokemonsFiltered"
+          <Card v-for="pokemon in pokemonsFiltered" @click="pokeModalStore.set(pokemon)"
           :key="pokemon?.id" 
           :id="pokemon?.id"
           :name="pokemon?.name" 
@@ -87,6 +90,7 @@ let maxXp = reactive(ref(0));
       </section>
     </div>
   </main>
+  <Modal/>
 
 </template>
 

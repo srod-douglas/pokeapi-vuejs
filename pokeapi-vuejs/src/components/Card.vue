@@ -35,7 +35,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <li :class="`card-poke rounded-5 ${pokemon.type}`" :id="pokemon.id" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+    <li :class="`card-poke rounded-5 ${pokemon.type}`" :id="pokemon.id" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <div :class="`rounded-circle bg-transparent border  div-image-poke ${pokemon.type}`" >
             <img :src="`${baseUrlImages}/${pokemon.id}.svg`" class="card-img-top object-fit-contain" style="height: 110%" alt="...">
         </div>
@@ -66,7 +67,6 @@ onMounted(() => {
                     <div class="progress w-100" role="progressbar" aria-label="ataque" 
                     :aria-valuenow="pokemon.attack" :aria-valuemin="0" :aria-valuemax="pokemon.maxAttack">
                     <div :class="`progress-bar ${pokemon.type}`" :style="`width:${pokemon.attack}%;`">
-
                         {{ pokemon.attack }} pts
                     </div>
                 </div>
