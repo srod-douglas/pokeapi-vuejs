@@ -36,6 +36,132 @@
   --section-gap: 160px;
 }
 
+.color-type-water{
+  color: white;
+  background-color: #5090D6;
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(80, 145, 214, 0.319)!important;
+  border-color: #5090D6;
+}
+
+.color-type-dragon{
+  color: white;
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(11, 109, 195, 0.311)!important;
+  border-color: #0B6DC3;
+  background-color: #0B6DC3;
+}
+
+.color-type-electric{
+  background-color: #F4D23C;
+  color: white;
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(244, 210, 60, 0.525)!important;
+  border-color: #F4D23C;
+}
+
+.color-type-fairy{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553),15px 15px 30px 0 rgba(236, 143, 230, 0.332)!important;
+  background-color: #EC8FE6;
+  border-color: #EC8FE6;
+  color: white;
+}
+
+.color-type-ghost{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(82, 105, 173, 0.363)!important;
+  background-color: #5269AD;
+  border-color: #5269AD;
+  color: white;
+}
+
+.color-type-fire{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(255, 191, 145, 0.525)!important;
+  background-color: #FF9D55;
+  border-color: #FF9D55;
+  color: white;
+}
+
+.color-type-ice{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(115, 206, 192, 0.323)!important;;
+  background-color: #73CEC0;
+  border-color: #73CEC0;
+  color: white;
+}
+
+.color-type-grass{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(100, 188, 90, 0.305)!important;;
+  background-color: #63BC5A;
+  border-color: #63BC5A;
+  color: white;
+}
+
+.color-type-bug{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(144, 193, 47, 0.35)!important;;
+  background-color: #91C12F;
+  border-color: #91C12F;
+  color: white;
+}
+
+.color-type-fighting{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(206, 65, 107, 0.362)!important;;
+  background-color: #CE416B;
+  border-color: #CE416B;
+  color: white;
+}
+
+.color-type-normal{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(145, 154, 162,.525)!important;;
+  background-color: #919AA2;
+  border-color: #919AA2;
+  color: white;
+}
+
+.color-type-dark{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(90, 84, 101,.525)!important;;
+  background-color: #5A5465;
+  border-color: #5A5465;
+  color: white;
+}
+
+.color-type-steel{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(90, 142, 162, 0.336)!important;;
+  background-color: #5A8EA2;
+  border-color: #5A8EA2;
+  color: white;
+}
+
+.color-type-rock{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(197, 183, 140,.525)!important;;
+  background-color: #C5B78C;
+  border-color: #C5B78C;
+  color: white;
+}
+
+.color-type-psychic{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(250, 113, 122, 0.326)!important;;
+  background-color: #FA7179;
+  border-color: #FA7179;
+  color: white;
+}
+
+.color-type-ground{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(217, 121, 69, 0.332)!important;;
+  background-color: #D97845;
+  border-color: #D97845;
+  color: white;
+}
+
+.color-type-poison{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(180, 103, 206, 0.338)!important;;
+  background-color: #B567CE;
+  border-color: #B567CE;
+  color: white;
+}
+
+.color-type-flying{
+  box-shadow: 15px 15px 30px 0 rgba(255, 255, 255, 0.553), 15px 15px 30px 0 rgba(137, 170, 227, 0.39)!important;;
+  background-color: #89AAE3;
+  border-color: #89AAE3;
+  color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
