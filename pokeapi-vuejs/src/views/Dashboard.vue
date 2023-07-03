@@ -1,10 +1,9 @@
 <script setup>
 
 import { reactive, ref, onMounted, onUpdated, computed } from 'vue';
-// import { useInputValue } from '@/stores/inputValue.ts'
+import { useInputValue } from '@/stores/inputValue.ts'
 
 import Card from '@/components/Card.vue'
-import Form from '@/components/Form.vue'
 import api from '@/services/api.ts';
 
 const baseUrlImages = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world';
@@ -54,34 +53,161 @@ let maxXp = reactive(ref(0));
 <template>
   <div>
     <header>
-      <h1> Pokemon </h1>
-      <form @submit.prevent class="form-floating mb-3">
-        <input v-model="inputValue" type="text" autocomplete="off" class="form-control" id="floatingInput" placeholder="ex: pikachu">
-        <label for="floatingInput">Digite o nome do pokemon</label>
-      </form>
+      <div>
+        <div>
+          <img class="header-icon" src="../assets/images/pokemons/logo/poke-icon.png"/>
+          <h1 class="header-title"> Pokeapi Vuejs </h1>
+        </div>
+        <form @submit.prevent class="form-floating mb-3">
+          <input v-model="inputValue" type="text" autocomplete="off" class="form-control" id="floatingInput" placeholder="ex: pikachu">
+          <label for="floatingInput">Digite o nome do pokemon</label>
+        </form>
+      </div>
     </header>
   </div>
 
   <main>
-    <section>
-      <ul>
-        <Card v-for="pokemon in pokemonsFiltered"
-        :key="pokemon?.id" 
-        :id="pokemon?.id"
-        :name="pokemon?.name" 
-        :type="pokemon?.types[0].type.name"
-        :maxAttack="maxAttack"
-        :maxDefense="maxDefense"
-        :maxXp="maxXp"
-        :xp="pokemon?.base_experience"
-        :defense="pokemon?.stats[1].base_stat"
-        :attack="pokemon?.stats[2].base_stat"
-        />
-      </ul>
-    </section>
+    <div>
+
+      <section>
+        <ul>
+          <Card v-for="pokemon in pokemonsFiltered"
+          :key="pokemon?.id" 
+          :id="pokemon?.id"
+          :name="pokemon?.name" 
+          :type="pokemon?.types[0].type.name"
+          :maxAttack="maxAttack"
+          :maxDefense="maxDefense"
+          :maxXp="maxXp"
+          :xp="pokemon?.base_experience"
+          :defense="pokemon?.stats[1].base_stat"
+          :attack="pokemon?.stats[2].base_stat"
+          />
+        </ul>
+      </section>
+    </div>
   </main>
 
 </template>
 
-<style>
+<style scoped>
+  main{
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 8vh;
+    background-color: var(--vt-c-text-dark-1);
+  }
+
+  main > div {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+    background-color: var(--vt-c-text-dark-2);
+    box-shadow: rgba(1, 161, 161, 0.273) 0px 0px 100px -5px, rgb(255, 255, 255) 0px 8px 96px -8px;
+  }
+
+  header > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 1280px;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  header > div > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-icon {
+    max-width: 10%;
+    max-height: 100%;
+  }
+
+  .header-title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--vt-c-black-mute);
+    margin: 0;
+  }
+
+  form{
+    width: 50%;
+    margin: 0px!important;
+    border:none!important;
+  }
+
+  input::placeholder{
+    color: var(--color-background-mute);
+  }
+
+  label{
+    color: var(--vt-c-divider-dark-2);
+  }
+
+  input:enabled, input:focus{
+      box-shadow: 0 0 0 0;
+      border: 1px solid rgba(110, 215, 250, 0.1);
+    }
+
+  @media(max-width: 1024px){
+
+    header > div > div {
+      width: 57px;
+    }
+
+    .header-title{
+      display: none;
+    }
+
+    .form-floating{
+      width: 90%;
+    }
+
+    .header-icon{
+      max-width: 57px;
+      /* max-height: 100%; */
+    }
+  }
+    ul{
+        padding: 6vh 0vh 0vh 0vh;
+        margin-top: 8vh;
+        display: flex;
+        height: 80vh;
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 40px;
+    }
+
+    @media(min-width: 1280px){
+
+        ul{
+            padding-top: 6vh;
+            padding: 6vh 0vh 6vh 0vh;
+            display: flex; 
+            align-items: center;
+            height: 80vh;
+            width: 100%;
+            white-space: none;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+    }
 </style>
