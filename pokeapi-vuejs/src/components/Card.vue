@@ -36,7 +36,7 @@ onMounted(() => {
 
 <template>
 
-    <li :class="`card-poke rounded-5 ${pokemon.type}`" :id="pokemon.id" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <li :class="`card-poke rounded-5 ${pokemon.type}`" :id="pokemon.id" data-bs-toggle="modal" data-bs-target="#modal">
         <div :class="`rounded-circle bg-transparent border  div-image-poke ${pokemon.type}`" >
             <img :src="`${baseUrlImages}/${pokemon.id}.svg`" class="card-img-top object-fit-contain" style="height: 110%" alt="...">
         </div>

@@ -10,9 +10,9 @@ const baseUrlImages = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/
 </script>
 
 <template>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <Card
+    <Card v-if="pokeStore.get.id"
         :key="pokeStore.get.id" 
         :id="pokeStore.get.id"
         :name="pokeStore.get.name" 
